@@ -6,10 +6,8 @@
       <class name="testcases.CertificationTest">
         <methods>
           <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="loginTC_001"/>
-          <include name="loginTC_002"/>
-          <include name="loginTC_003"/>
+          <include name="setup"/>
+          <include name="TestScenario1"/>
         </methods>
       </class> <!-- testcases.CertificationTest -->
     </classes>

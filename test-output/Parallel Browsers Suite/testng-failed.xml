@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [Parallel Browsers Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="3" parallel="tests" name="Firefox(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="testcases.FirefoxRunner">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="TestScenario_02"/>
+        </methods>
+      </class> <!-- testcases.FirefoxRunner -->
+    </classes>
+  </test> <!-- Firefox(failed) -->
+  <test thread-count="3" parallel="tests" name="Chrome(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testcases.ChromeRunner">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="TestScenario_01"/>
+        </methods>
+      </class> <!-- testcases.ChromeRunner -->
+    </classes>
+  </test> <!-- Chrome(failed) -->
+  <test thread-count="3" parallel="tests" name="Safari(failed)">
+    <parameter name="browser" value="safari"/>
+    <parameter name="platform" value="macOS Catalina"/>
+    <classes>
+      <class name="testcases.SafariRunner">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="TestScenario_03"/>
+        </methods>
+      </class> <!-- testcases.SafariRunner -->
+    </classes>
+  </test> <!-- Safari(failed) -->
+</suite> <!-- Failed suite [Parallel Browsers Suite] -->

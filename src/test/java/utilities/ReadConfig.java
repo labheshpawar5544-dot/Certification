@@ -31,8 +31,8 @@ public class ReadConfig {
 		return username;
 	}
 	
-	public String getPassword() {
-		String password = pro.getProperty("password");
+	public String getAccessKey() {
+		String password = pro.getProperty("accesskey");
 		return password;
 	}
 	

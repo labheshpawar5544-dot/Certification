@@ -21,8 +21,10 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import testcases.BaseClass;
+import testcases.BaseClass;
+import testcases.BaseClass2;
 
-public class CertificationPage extends BaseClass {
+public class CertificationPage extends BaseClass2 {
 	WebDriver ldriver;
 
 	public CertificationPage(WebDriver rdriver) {
@@ -268,18 +270,10 @@ public class CertificationPage extends BaseClass {
 			clickOnWebElement(submitbutton, 10);
 			}
 	
-	public String getAndAcceptAlert() {
-        try {
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            System.out.println("Alert detected with text: " + alertText);
-            alert.accept(); // Clicks OK/Accept
-            return alertText;
-        } catch (NoAlertPresentException e) {
-            return null; // Return null if no alert is found
-
-        }
-    }
+	 public String getValidationMessage() {
+	        return name.getAttribute("validationMessage");
+	        
+	    }
 	
 	public void selectCountry() throws InterruptedException {
 	BaseClass.clickOnWebElement(country, 10);

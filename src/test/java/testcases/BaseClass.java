@@ -32,7 +32,7 @@ public class BaseClass {
 
 	public String baseURL = readconfig.getApplicationURL();
 	public String username = readconfig.getUsername();
-	public String password = readconfig.getPassword();
+	public String password = readconfig.getAccessKey();
 	public String passwordnormaluser = readconfig.getPasswordNormalUser();
 	public String usernamenormaluser = readconfig.getUsernameNormalUser();
 	public String invalidusername = readconfig.getInvalidUsername();

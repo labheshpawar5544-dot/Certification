@@ -10,9 +10,9 @@ import org.testng.annotations.Test;
 
 import utilities.RerunFailedTest;
 
-public class CertificationTest extends BaseClass2 {
-	@Test(retryAnalyzer = RerunFailedTest.class, description = "Test Scenario 1:")
-	public void loginTC_001() throws InterruptedException, IOException {
+public class CertificationTest extends BaseClass2{
+	@Test(description = "Test Scenario 1:")
+	public void TestScenario_01() throws InterruptedException, IOException {
 		loginpage.login();
 		loginpage.clickSimpleDemoForm();
 		Assert.assertTrue(driver.getCurrentUrl().contains("simple-form-demo"));
@@ -21,8 +21,8 @@ public class CertificationTest extends BaseClass2 {
 		Assert.assertEquals(loginpage.yourMessage(), "Welcome to LambdaTest");
 	}
 	
-	@Test(retryAnalyzer = RerunFailedTest.class, description = "Test Scenario 2:")
-	public void loginTC_002() throws InterruptedException, IOException {
+	@Test(description = "Test Scenario 2:")
+	public void TestScenario_02() throws InterruptedException, IOException {
 		loginpage.login();
 		loginpage.clickDragAndDrop();
 		loginpage.sliderValue();
@@ -31,15 +31,15 @@ public class CertificationTest extends BaseClass2 {
 		System.out.println("Test successfully structured to drag slider and verify value.");
         Assert.assertEquals(loginpage.getCurrentSliderValue(), "95");
 		
-		
 	}
 	
-	@Test(retryAnalyzer = RerunFailedTest.class, description = "Test Scenario 3:")
-	public void loginTC_003() throws InterruptedException, IOException {
+	@Test( description = "Test Scenario 3:")
+	public void TestScenario_03() throws InterruptedException, IOException {
 		loginpage.login();
 		loginpage.clickInputFormSubmit();
 		loginpage.clickSubmitButton();
-		loginpage.getAndAcceptAlert();
+		String validationMessage = loginpage.getValidationMessage();
+        Assert.assertEquals(validationMessage, "Please fill out this field.");
 		loginpage.setName();
 		loginpage.setEmail();
 		loginpage.setPassword();
@@ -51,15 +51,10 @@ public class CertificationTest extends BaseClass2 {
 		loginpage.setAddress2();
 		loginpage.setState();
 		loginpage.setZipCode();
-		BaseClass.scrollDown200pixels();
 		loginpage.clicksubmit();
 		 Assert.assertEquals(loginpage.thankMessage(), "Thanks for contacting us, we will get back to you shortly.");
 		
-		
-		
+	}
 		
 		
 	}
-
-
-}

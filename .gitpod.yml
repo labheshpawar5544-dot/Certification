@@ -1,0 +1,17 @@
+# .gitpod.yml
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Setup & Build
+    init: mvn clean install -DskipTests
+    command: mvn test
+
+ports:
+  - port: 4444
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
+    - richardwillis.vscode-testng-runner
